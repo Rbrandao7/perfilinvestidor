@@ -17,7 +17,7 @@ code {
   text-align: justify;
 }
 
-input[type="radio"]{
+input[type="radio"], label{
   cursor: pointer;
 }
 

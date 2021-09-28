@@ -1,0 +1,468 @@
+[
+    {
+        "title": "Qual a finalidade do Investimento e preferências quanto à assunção de riscos?",
+        "id": "question1",
+        "options": [
+            {
+                "title": "Preservar meu capital ao longo do tempo, com segurança mesmo abrindo mão de rentabilidade",
+                "weight": 0,
+                "id": "ans1opt1",
+                "name": "question1",
+                "positionX": 61,
+                "positionY": 572,
+                "page": 0
+            },
+            {
+                "title": "Aumentar meu capital, com rentabilidade e segurança",
+                "weight": 5,
+                "id": "ans1opt2",
+                "name": "question1",
+                "positionX": 61,
+                "positionY": 562,
+                "page": 0
+            },
+            {
+                "title": "Rentabilidade, independente do risco, aumentando, inclusive, o valor investido",
+                "weight": 10,
+                "id": "ans1opt3",
+                "name": "question1",
+                "positionX": 61,
+                "positionY": 547,
+                "page": 0
+            }
+        ]
+
+    },
+    {
+        "title": "Por quanto tempo você pretende deixar seus recursos aplicados?",
+        "id": "question2",
+        "options": [
+            {
+                "title": "Menos de 1 ano",
+                "weight": 0,
+                "id": "ans2opt1",
+                "name": "question2",
+                "positionX": 61,
+                "positionY": 510,
+                "page": 0
+            },
+            {
+                "title": "Entre 1 ano e 3 anos",
+                "weight": 5,
+                "id": "ans2opt2",
+                "name": "question2",
+                "positionX": 61,
+                "positionY": 500,
+                "page": 0
+            },
+            {
+                "title": "Acima de 3 anos",
+                "weight": 10,
+                "id": "ans2opt3",
+                "name": "question2",
+                "positionX": 61,
+                "positionY": 487,
+                "page": 0
+            }
+        ]
+
+    },
+    {
+        "title": "Sobre quais investimentos abaixo você tem conhecimento?",
+        "id": "question3",
+        "options": [
+            {
+                "title": "Poupança, CDB, LCI, LCA ou Fundos DI",
+                "weight": 2,
+                "id": "ans3opt1",
+                "name": "question3",
+                "positionX": 61,
+                "positionY": 450,
+                "page": 0
+            },
+            {
+                "title": "Além dos anteriores, outros produtos de Renda Fixa (como investimentos atrelados à inflação e títulos prefixados) ou Fundos Multimercados",
+                "weight": 5,
+                "id": "ans3opt2",
+                "name": "question3",
+                "positionX": 61,
+                "positionY": 439,
+                "page": 0
+            },
+            {
+                "title": "Além dos anteriores, Ações, Fundos de Ações ou Fundos Estruturados ( FIP, FIDC, FII, etc.)",
+                "weight": 9,
+                "id": "ans3opt3",
+                "name": "question3",
+                "positionX": 61,
+                "positionY": 414,
+                "page": 0
+            },
+            {
+                "title": "Além de todos os anteriores, também conheço Derivativos",
+                "weight": 10,
+                "id": "ans3opt4",
+                "name": "question3",
+                "positionX": 61,
+                "positionY": 402,
+                "page": 0
+            },
+            {
+                "title": "Não conheço produtos de investimentos",
+                "weight": 0,
+                "id": "ans3opt5",
+                "name": "question3",
+                "positionX": 61,
+                "positionY": 390,
+                "page": 0
+            }
+        ]
+
+    },
+    {
+        "title": "Nos últimos 12 meses qual a natureza das operações realizadas no mercado de valores mobiliários?",
+        "id": "question4",
+        "options": [
+            {
+                "title": "Poupança, CDB, LCI, LCA ou Fundos DI",
+                "weight": 2,
+                "id": "ans4opt1",
+                "name": "question4",
+                "positionX": 61,
+                "positionY": 353,
+                "page": 0
+            },
+            {
+                "title": "Produtos de Renda Fixa (como investimentos atrelados à inflação e títulos prefixados) ou Fundos Multimercados",
+                "weight": 5,
+                "id": "ans4opt2",
+                "name": "question4",
+                "positionX": 61,
+                "positionY": 342,
+                "page": 0
+            },
+            {
+                "title": "Ações, Fundos de Ações ou Fundos Estruturados ( FIP, FIDC, FII, etc.)",
+                "weight": 9,
+                "id": "ans4opt3",
+                "name": "question4",
+                "positionX": 61,
+                "positionY": 330,
+                "page": 0
+            },
+            {
+                "title": "Derivativos",
+                "weight": 10,
+                "id": "ans4opt4",
+                "name": "question4",
+                "positionX": 61,
+                "positionY": 318,
+                "page": 0
+            },
+            {
+                "title": "Não investi nos últimos 12 meses",
+                "weight": 0,
+                "id": "ans4opt5",
+                "name": "question4",
+                "positionX": 61,
+                "positionY": 306,
+                "page": 0
+            }
+        ]
+
+    },
+    {
+        "title": "Com qual frequência você investiu nos últimos 12 meses?",
+        "id": "question5",
+        "options": [
+            {
+                "title": "No mínimo, 12 vezes",
+                "weight": 10,
+                "id": "ans5opt1",
+                "name": "question5",
+                "positionX": 61,
+                "positionY": 270,
+                "page": 0
+            },
+            {
+                "title": "Aproximadamente 6 vezes",
+                "weight": 5,
+                "id": "ans5opt2",
+                "name": "question5",
+                "positionX": 61,
+                "positionY": 258,
+                "page": 0
+            },
+            {
+                "title": "Aproximadamente 4 vezes",
+                "weight": 3,
+                "id": "ans5opt3",
+                "name": "question5",
+                "positionX": 61,
+                "positionY": 246,
+                "page": 0
+            },
+            {
+                "title": "Aproximadamente 2 vezes",
+                "weight": 1,
+                "id": "ans5opt4",
+                "name": "question5",
+                "positionX": 61,
+                "positionY": 234,
+                "page": 0
+            },
+            {
+                "title": "Não investi nos últimos 12 meses",
+                "weight": 0,
+                "id": "ans5opt5",
+                "name": "question5",
+                "positionX": 61,
+                "positionY": 222,
+                "page": 0
+            }
+        ]
+
+    },
+    {
+        "title": "Qual das alternativas melhor classifica sua formação acadêmica e experiência com o Mercado Financeiro?",
+        "id": "question6",
+        "options": [
+            {
+                "title": "Não possuo formação acadêmica ou conhecimento do Mercado Financeiro",
+                "weight": 1,
+                "id": "ans6opt1",
+                "name": "question6",
+                "positionX": 61,
+                "positionY": 174,
+                "page": 0
+            },
+            {
+                "title": "Possuo formação acadêmica em outra área, mas não tenho experiência com o Mercado Financeiro",
+                "weight": 2,
+                "id": "ans6opt2",
+                "name": "question6",
+                "positionX": 61,
+                "positionY": 162,
+                "page": 0
+            },
+            {
+                "title": "Possuo formação acadêmica em outra área, mas possuo conhecimento sobre o Mercado financeiro",
+                "weight": 4,
+                "id": "ans6opt3",
+                "name": "question6",
+                "positionX": 61,
+                "positionY": 150,
+                "page": 0
+            },
+            {
+                "title": "Possuo formação acadêmica na área financeira ou pleno conhecimento sobre o Mercado Financeiro",
+                "weight": 5,
+                "id": "ans6opt4",
+                "name": "question6",
+                "positionX": 61,
+                "positionY": 138,
+                "page": 0
+            }
+        ]
+
+    },
+    {
+        "title": "Qual sua renda mensal média declarada?",
+        "id": "question7",
+        "options": [
+            {
+                "title": "Até R$ 1.200",
+                "weight": 0,
+                "id": "ans7opt1",
+                "name": "question7",
+                "positionX": 61,
+                "positionY": 89,
+                "page": 0
+            },
+            {
+                "title": "De R$ 1.201 até R$ 5.000",
+                "weight": 1,
+                "id": "ans7opt2",
+                "name": "question7",
+                "positionX": 61,
+                "positionY": 77,
+                "page": 0
+            },
+            {
+                "title": "De R$ 5.001 até R$ 10.000",
+                "weight": 2,
+                "id": "ans7opt3",
+                "name": "question7",
+                "positionX": 61,
+                "positionY": 65,
+                "page": 0
+            },
+            {
+                "title": "Acima de R$ 10.000",
+                "weight": 4,
+                "id": "ans7opt4",
+                "name": "question7",
+                "positionX": 61,
+                "positionY": 746,
+                "page": 1
+            }
+        ]
+
+    },
+    {
+        "title": "Qual o valor dos ativos (bens materiais, imóveis e aplicações financeiras) que compõem seu patrimônio?",
+        "id": "question8",
+        "options": [
+            {
+                "title": "Até R$ 10.000",
+                "weight": 0,
+                "id": "ans8opt1",
+                "name": "question8",
+                "positionX": 61,
+                "positionY": 709,
+                "page": 1
+            },
+            {
+                "title": "De R$ 10.001 até R$ 100.000",
+                "weight": 1,
+                "id": "ans8opt2",
+                "name": "question8",
+                "positionX": 61,
+                "positionY": 697,
+                "page": 1
+            },
+            {
+                "title": "De R$ 100.001 até R$ 500.000",
+                "weight": 2,
+                "id": "ans8opt3",
+                "name": "question8",
+                "positionX": 61,
+                "positionY": 685,
+                "page": 1
+            },
+            {
+                "title": "De R$ 500.001 até R$ 1.000.000",
+                "weight": 4,
+                "id": "ans8opt4",
+                "name": "question8",
+                "positionX": 61,
+                "positionY": 673,
+                "page": 1
+            },
+            {
+                "title": "Acima de R$ 1.000.000 ",
+                "weight": 5,
+                "id": "ans8opt5",
+                "name": "question8",
+                "positionX": 61,
+                "positionY": 661,
+                "page": 1
+            }
+        ]
+
+    },
+    {
+        "title": "Considerando suas necessidades futuras de recursos, qual é a sua expectativa em relação aos seus investimentos?",
+        "id": "question9",
+        "options": [
+            {
+                "title": "Não planejo nesse momento resgatar meus investimentos e nem realizar novas aplicações ",
+                "weight": 2,
+                "id": "ans9opt1",
+                "name": "question9",
+                "positionX": 61,
+                "positionY": 613,
+                "page": 1
+            },
+            {
+                "title": "Não planejo nesse momento regatar meus investimentos e pretendo realizar novas aplicações",
+                "weight": 3,
+                "id": "ans9opt2",
+                "name": "question9",
+                "positionX": 61,
+                "positionY": 601,
+                "page": 1
+            },
+            {
+                "title": "Posso precisar de parte dos meus investimentos para pagar despesas no curto prazo",
+                "weight": 1,
+                "id": "ans9opt3",
+                "name": "question9",
+                "positionX": 61,
+                "positionY": 589,
+                "page": 1
+            },
+            {
+                "title": "Conto com esses investimentos para complementar minha renda",
+                "weight": 0,
+                "id": "ans9opt4",
+                "name": "question9",
+                "positionX": 61,
+                "positionY": 577,
+                "page": 1
+            },
+            {
+                "title": "Não possuo necessidades futuras de recursos, com relação aos investimentos",
+                "weight": 5,
+                "id": "ans9opt5",
+                "name": "question9",
+                "positionX": 61,
+                "positionY": 565,
+                "page": 1
+            }
+        ]
+
+    },
+    {
+        "title": "Do seu pratimônio e receitas declaradas, qual o volume em (%) investido nos últimos 12 meses?",
+        "id": "question10",
+        "options": [
+            {
+                "title": "Investi menos de 10%",
+                "weight": 1,
+                "id": "ans10opt1",
+                "name": "question10",
+                "positionX": 61,
+                "positionY": 517,
+                "page": 1
+            },
+            {
+                "title": "Investi entre 10,01% a 25%",
+                "weight": 2,
+                "id": "ans10opt2",
+                "name": "question10",
+                "positionX": 61,
+                "positionY": 505,
+                "page": 1
+            },
+            {
+                "title": "Investi entre 25,01% a 70%",
+                "weight": 3,
+                "id": "ans10opt3",
+                "name": "question10",
+                "positionX": 61,
+                "positionY": 493,
+                "page": 1
+            },
+            {
+                "title": "Investi acima de 70%",
+                "weight": 5,
+                "id": "ans10opt4",
+                "name": "question10",
+                "positionX": 61,
+                "positionY": 481,
+                "page": 1
+            },
+            {
+                "title": "Não  investi nos  últimos 12 meses",
+                "weight": 0,
+                "id": "ans10opt5",
+                "name": "question10",
+                "positionX": 61,
+                "positionY": 469,
+                "page": 1
+            }
+        ]
+
+    }
+]
