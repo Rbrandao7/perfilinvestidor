@@ -160,7 +160,7 @@ const Form = () => {
 
         SecondPage.drawText(selectPerfil()[0], {
             x: 52,
-            y: 380,
+            y: 360,
             size: 10,
             font: calibriBold,
             color: rgb(0, 0, 0),
@@ -168,7 +168,7 @@ const Form = () => {
 
         SecondPage.drawText(selectPerfil()[1], {
             x: 52,
-            y: 370,
+            y: 340,
             size: 10,
             font: assistantRegularFont,
             lineHeight:11,
