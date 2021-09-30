@@ -6,15 +6,19 @@ import { degrees, PDFDocument, rgb, StandardFonts } from 'pdf-lib';
 import fontkit from '@pdf-lib/fontkit'
 import PDFPF from '../template-pf.pdf';
 import fontCalibri from '../calibri.ttf';
+import fontCalibriBold from '../calibri-bold.ttf';
+import assistantRegular from '../assistant.ttf';
 import questions from '../questions.json';
 import perfis from '../perfis.json';
 import cpfFormat from '../lib/formatCpf';
 import formatCnpj from '../lib/formatCnpj';
+import testCpf from '../lib/testCpf';
 
 const Form = () => {
 
     const [soma, setSoma] = useState();
     const [cpf, setCpf] = useState('');
+    const [cpfValid, setCpfValid] = useState(false);
     const [nome, setNome] = useState('');
     const [formValid, setFormValid] = useState(false);
     const [data, setData] = useState('');
@@ -75,6 +79,7 @@ const Form = () => {
     useEffect(() => {
         setFormValid(checkFormValid());
         setSoma(calcSum());
+        setCpfValid(testCpf(cpf))
 
     }, [cpf, nome, soma, { ...answers }, local, data])
 
@@ -102,11 +107,14 @@ const Form = () => {
     }
 
     const handlerCnpjChange = (event) => {
-  //      setCnpj(formatCnpj(event.target.value));
+        //      setCnpj(formatCnpj(event.target.value));
     }
 
     const handleCpfChange = (event) => {
-         setCpf(cpfFormat(event.target.value));
+
+        if (event.target.value.length > 14) return '';
+
+        setCpf(cpfFormat(event.target.value));
     };
 
     const handlerLocal = (evt) => {
@@ -118,7 +126,7 @@ const Form = () => {
     }
 
     const checkFormValid = () => {
-        return Object.values(answers).every((answer) => answer.selected) && nome !== "" && cpf !== "" && local !== "" && data !== "";
+        return Object.values(answers).every((answer) => answer.selected) && nome !== "" && cpf !== "" && local !== "" && data !== "" && cpfValid === true;
     }
 
     const handlerPdfGen = async () => {
@@ -128,12 +136,15 @@ const Form = () => {
         const pdfDoc = await PDFDocument.load(existingPdfBytes)
         const helveticaFont = await pdfDoc.embedFont(StandardFonts.Helvetica);
         const TimesRomanFont = await pdfDoc.embedFont(StandardFonts.TimesRoman);
-
-        const fontBytes = await fetch(fontCalibri).then(res => res.arrayBuffer());
+        
+        const calibriFontBytes = await fetch(fontCalibri).then(res => res.arrayBuffer());
+        const calibriBoldFontBytes = await fetch(fontCalibriBold).then(res => res.arrayBuffer());
+        const assistantRegularFontBytes = await fetch(assistantRegular).then(res => res.arrayBuffer());
         pdfDoc.registerFontkit(fontkit)
-        const customFont = await pdfDoc.embedFont(fontBytes)
+        const calibriRegular= await pdfDoc.embedFont(calibriFontBytes);
+        const calibriBold = await pdfDoc.embedFont(calibriBoldFontBytes);
+        const assistantRegularFont = await pdfDoc.embedFont(assistantRegularFontBytes);
 
-        console.log("fontBytes", fontBytes);
 
         const pages = pdfDoc.getPages()
         const firstPage = pages[0];
@@ -143,16 +154,33 @@ const Form = () => {
             x: 230,
             y: 104,
             size: 12,
-            font: customFont,
-            color: rgb(0,0,0),
+            font: calibriRegular,
+            color: rgb(0, 0, 0),
         });
 
+        SecondPage.drawText(selectPerfil()[0], {
+            x: 52,
+            y: 380,
+            size: 10,
+            font: calibriBold,
+            color: rgb(0, 0, 0),
+        });
+
+        SecondPage.drawText(selectPerfil()[1], {
+            x: 52,
+            y: 370,
+            size: 10,
+            font: assistantRegularFont,
+            lineHeight:11,
+            color: rgb(0, 0, 0),
+        });
+        // Perfil
         SecondPage.drawText(cpf, {
             x: 230,
             y: 85,
             size: 10,
-            font: customFont,
-            color: rgb(0,0,0),
+            font: calibriRegular,
+            color: rgb(1, 0, 0),
         });
         //  Marca as respostas
         Object.entries(answers).forEach(([chave, valor], index) => {
@@ -165,8 +193,8 @@ const Form = () => {
                 y: postionY,
                 width: 10,
                 height: 10,
-                borderColor: rgb(0, 0, 0.5),
-                borderWidth: 1.5,
+                borderColor: rgb(0.15,0.35,0.60),
+                borderWidth: 1.2,
             })
         })
 
@@ -210,10 +238,7 @@ const Form = () => {
             <Card>
                 <div className="card mb-3">
                     <div className="row g-0">
-                        <div className="col-md-1 p-3 center-score">
-                            {soma}
-                        </div>
-                        <div className="col-md-11">
+                        <div className="col-md-12">
                             <div className="card-body">
                                 <h5 className="card-title">{selectPerfil()[0]}</h5>
                                 <p className="card-text">
@@ -223,6 +248,9 @@ const Form = () => {
                         </div>
                     </div>
                 </div>
+                <p>
+                    Declaro que:
+                </p>
                 <p>
                     <Check />
                     As informações contidas neste questionário são verdadeiras, estando ciente que as recomendações de investimento
@@ -242,21 +270,6 @@ const Form = () => {
                 <div className="row">
                     <div className="col-12 col-sm-6">
                         <div className="mb-3">
-                            <label htmlFor="nome" className="form-label">Nome <span className="text-danger">*</span></label>
-                            <input type="text" className="form-control" id="nome" onChange={handlerInputNome} value={nome} />
-                        </div>
-                    </div>
-                    <div className="col-12 col-sm-6">
-                        <div className="mb-3">
-                            <label htmlFor="cpf" className="form-label">CPF <span className="text-danger">*</span></label>
-                            <input type="tel" className="form-control" id="cpf" onChange={handleCpfChange} value={cpf} />
-                        </div>
-                    </div>
-                </div>
-
-                <div className="row">
-                    <div className="col-12 col-sm-6">
-                        <div className="mb-3">
                             <label htmlFor="local" className="form-label">Local <span className="text-danger">*</span></label>
                             <input type="text" className="form-control" id="local" onChange={handlerLocal} value={local} />
                         </div>
@@ -265,6 +278,30 @@ const Form = () => {
                         <div className="mb-3">
                             <label htmlFor="data" className="form-label">Data <span className="text-danger">*</span></label>
                             <input type="date" className="form-control" id="data" onSelect={handlerData} onChange={handlerData} value={data} />
+                        </div>
+                    </div>
+                </div>
+
+                <div className="row">
+                    <div className="col-12 col-sm-6">
+                        <div className="mb-3">
+                            <label htmlFor="nome" className="form-label">
+                                Nome
+                                <span className="text-danger">*</span>
+                                
+
+                            </label>
+                            <input type="text" className="form-control" id="nome" onChange={handlerInputNome} value={nome} />
+                        </div>
+                    </div>
+                    <div className="col-12 col-sm-6">
+                        <div className="mb-3">
+                            <label htmlFor="cpf" className="form-label">
+                                CPF 
+                                <span className="text-danger">*</span>
+                                {cpfValid === true ?'' : <span className="text-danger ml-3">Digite um cpf válido</span>}
+                                </label>
+                            <input type="tel" className="form-control" id="cpf" onChange={handleCpfChange} value={cpf} />
                         </div>
                     </div>
                 </div>

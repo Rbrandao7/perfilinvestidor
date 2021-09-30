@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const Option = (props) => {
 
-    console.log(props.option.title)
+
 
     return (
         <>

@@ -1,9 +1,7 @@
 function cpfFormat(val) {
 
     let data = val.replace(/\D/g, "");
-
-    if (data.length > 11) return;
-
+    
     let cpf = "";
     let parts = Math.ceil(data.length / 3);
     for (let i = 0; i < parts; i++) {
