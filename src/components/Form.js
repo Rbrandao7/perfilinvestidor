@@ -14,6 +14,7 @@ import cpfFormat from '../lib/formatCpf';
 import formatCnpj from '../lib/formatCnpj';
 import testCpf from '../lib/testCpf';
 import styled from './Form.module.css';
+import parseDate from '../lib/parseDate';
 
 const Form = () => {
 
@@ -100,6 +101,7 @@ const Form = () => {
     };
 
     const handlerData = (evt) => {
+
         setData(evt.target.value);
     }
 
@@ -174,9 +176,8 @@ const Form = () => {
             font: calibriRegular,
             color: rgb(0, 0, 0),
         });
-
         
-        SecondPage.drawText((new Date(data)).toLocaleDateString(), {
+        SecondPage.drawText(parseDate(data), {
             x: 360,
             y: 168,
             size: 10,
@@ -184,16 +185,16 @@ const Form = () => {
             color: rgb(0, 0, 0),
         });
 
-        SecondPage.drawText(selectPerfil()[0], {
-            x: 52,
+        SecondPage.drawText(selectPerfil()[0]+":", {
+            x: 47,
             y: 360,
-            size: 10,
+            size: 12,
             font: calibriBold,
             color: rgb(0, 0, 0),
         });
 
         SecondPage.drawText(selectPerfil()[1], {
-            x: 52,
+            x: 47,
             y: 340,
             size: 10,
             font: assistantRegularFont,

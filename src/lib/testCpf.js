@@ -1,25 +1,53 @@
-function testCpf(strCPF) {
-    var Soma = 0;
-    var Resto;
-   
-    strCPF = strCPF.replace(/\D/g,"");
+function testCpf(val) {
+  var cpf = val.trim();
 
+  cpf = cpf.replace(/\./g, '');
+  cpf = cpf.replace('-', '');
+  cpf = cpf.split('');
 
-  if (strCPF == "00000000000") return false;
+  var v1 = 0;
+  var v2 = 0;
+  var aux = false;
 
-  for (let i=1; i<=9; i++) Soma = Soma + parseInt(strCPF.substring(i-1, i)) * (11 - i);
-  Resto = (Soma * 10) % 11;
+  for (var i = 1; cpf.length > i; i++) {
+    if (cpf[i - 1] != cpf[i]) {
+      aux = true;
+    }
+  }
 
-    if ((Resto == 10) || (Resto == 11))  Resto = 0;
-    if (Resto != parseInt(strCPF.substring(9, 10)) ) return false;
+  if (aux == false) {
+    return false;
+  }
 
-  Soma = 0;
-    for (let i = 1; i <= 10; i++) Soma = Soma + parseInt(strCPF.substring(i-1, i)) * (12 - i);
-    Resto = (Soma * 10) % 11;
+  for (var i = 0, p = 10; (cpf.length - 2) > i; i++, p--) {
+    v1 += cpf[i] * p;
+  }
 
-    if ((Resto == 10) || (Resto == 11))  Resto = 0;
-    if (Resto != parseInt(strCPF.substring(10, 11) ) ) return false;
+  v1 = ((v1 * 10) % 11);
+
+  if (v1 == 10) {
+    v1 = 0;
+  }
+
+  if (v1 != cpf[9]) {
+    return false;
+  }
+
+  for (var i = 0, p = 11; (cpf.length - 1) > i; i++, p--) {
+    v2 += cpf[i] * p;
+  }
+
+  v2 = ((v2 * 10) % 11);
+
+  if (v2 == 10) {
+    v2 = 0;
+  }
+
+  if (v2 != cpf[10]) {
+    return false;
+  } else {
     return true;
+  }
 }
 
 export default testCpf;
