@@ -13,6 +13,7 @@ import perfis from '../perfis.json';
 import cpfFormat from '../lib/formatCpf';
 import formatCnpj from '../lib/formatCnpj';
 import testCpf from '../lib/testCpf';
+import styled from './Form.module.css';
 
 const Form = () => {
 
@@ -136,12 +137,12 @@ const Form = () => {
         const pdfDoc = await PDFDocument.load(existingPdfBytes)
         const helveticaFont = await pdfDoc.embedFont(StandardFonts.Helvetica);
         const TimesRomanFont = await pdfDoc.embedFont(StandardFonts.TimesRoman);
-        
+
         const calibriFontBytes = await fetch(fontCalibri).then(res => res.arrayBuffer());
         const calibriBoldFontBytes = await fetch(fontCalibriBold).then(res => res.arrayBuffer());
         const assistantRegularFontBytes = await fetch(assistantRegular).then(res => res.arrayBuffer());
         pdfDoc.registerFontkit(fontkit)
-        const calibriRegular= await pdfDoc.embedFont(calibriFontBytes);
+        const calibriRegular = await pdfDoc.embedFont(calibriFontBytes);
         const calibriBold = await pdfDoc.embedFont(calibriBoldFontBytes);
         const assistantRegularFont = await pdfDoc.embedFont(assistantRegularFontBytes);
 
@@ -152,8 +153,33 @@ const Form = () => {
         const { width, height } = firstPage.getSize()
         SecondPage.drawText(nome, {
             x: 230,
-            y: 104,
-            size: 12,
+            y: 100,
+            size: 10,
+            font: calibriRegular,
+            color: rgb(0, 0, 0),
+        });
+
+        SecondPage.drawText(cpf, {
+            x: 230,
+            y: 80,
+            size: 10,
+            font: calibriRegular,
+            color: rgb(0, 0, 0),
+        });
+
+        SecondPage.drawText(local, {
+            x: 210,
+            y: 168,
+            size: 10,
+            font: calibriRegular,
+            color: rgb(0, 0, 0),
+        });
+
+        
+        SecondPage.drawText((new Date(data)).toLocaleDateString(), {
+            x: 360,
+            y: 168,
+            size: 10,
             font: calibriRegular,
             color: rgb(0, 0, 0),
         });
@@ -171,17 +197,10 @@ const Form = () => {
             y: 340,
             size: 10,
             font: assistantRegularFont,
-            lineHeight:11,
+            lineHeight: 11,
             color: rgb(0, 0, 0),
         });
-        // Perfil
-        SecondPage.drawText(cpf, {
-            x: 230,
-            y: 85,
-            size: 10,
-            font: calibriRegular,
-            color: rgb(1, 0, 0),
-        });
+
         //  Marca as respostas
         Object.entries(answers).forEach(([chave, valor], index) => {
             let postionX = questions[index]["options"].find(item => item.id == Object.values(answers)[index]["optionId"]).positionX;
@@ -193,7 +212,7 @@ const Form = () => {
                 y: postionY,
                 width: 10,
                 height: 10,
-                borderColor: rgb(0.15,0.35,0.60),
+                borderColor: rgb(0.15, 0.35, 0.60),
                 borderWidth: 1.2,
             })
         })
@@ -240,7 +259,7 @@ const Form = () => {
                     <div className="row g-0">
                         <div className="col-md-12">
                             <div className="card-body">
-                                <h5 className="card-title">{selectPerfil()[0]}</h5>
+                                <h3>{selectPerfil()[0]}</h3>
                                 <p className="card-text">
                                     {selectPerfil()[1]}
                                 </p>
@@ -288,7 +307,7 @@ const Form = () => {
                             <label htmlFor="nome" className="form-label">
                                 Nome
                                 <span className="text-danger">*</span>
-                                
+
 
                             </label>
                             <input type="text" className="form-control" id="nome" onChange={handlerInputNome} value={nome} />
@@ -297,20 +316,20 @@ const Form = () => {
                     <div className="col-12 col-sm-6">
                         <div className="mb-3">
                             <label htmlFor="cpf" className="form-label">
-                                CPF 
+                                CPF
                                 <span className="text-danger">*</span>
-                                {cpfValid === true ?'' : <span className="text-danger ml-3">Digite um cpf válido</span>}
-                                </label>
+                                
+                            </label>
                             <input type="tel" className="form-control" id="cpf" onChange={handleCpfChange} value={cpf} />
+                            {cpfValid === true ? '' : <span className={styled.perfil_erro_cpf}>Digite um cpf válido</span>}
                         </div>
                     </div>
                 </div>
 
                 {formValid === false ?
-                    <p className="text-small text-center text-danger">Selecione todas as opões e preencha todos os campos</p> :
-                    <div className="d-flex justify-content-center">
-                        <button onClick={handlerPdfGen} type="submit" className="btn btn-primary">Gerar PDF</button>
-
+                    <p className={styled.perfil_alerta_preenchimento}>Selecione todas as opões e preencha todos os campos</p> :
+                    <div className={styled.perfil_container_botao}>
+                        <button onClick={handlerPdfGen} type="submit" className="fusion-button button-flat button-small button-default button-1 fusion-button-default-span fusion-button-default-type">Gerar PDF</button>
                     </div>
                 }
 

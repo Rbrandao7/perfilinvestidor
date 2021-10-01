@@ -1,0 +1,14 @@
+.perfil_container_botao{
+    text-align: center;
+    margin: 20px;
+}
+.perfil_erro_cpf{
+    color: red;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.perfil_alerta_preenchimento{
+    text-align: center;
+    color: red;
+}
