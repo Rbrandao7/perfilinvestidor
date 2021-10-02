@@ -25,6 +25,7 @@ const Form = () => {
     const [formValid, setFormValid] = useState(false);
     const [data, setData] = useState('');
     const [local, setLocal] = useState('');
+    const [gerandoPdf, setGerandoPdf] = useState(false);
     const [answers, setAnswers] = useState({
         question1: {
             selected: false,
@@ -133,6 +134,8 @@ const Form = () => {
     }
 
     const handlerPdfGen = async () => {
+
+        setGerandoPdf(true);
         const url = PDFPF;
         const existingPdfBytes = await fetch(url).then(res => res.arrayBuffer());
 
@@ -155,7 +158,7 @@ const Form = () => {
         const { width, height } = firstPage.getSize()
         SecondPage.drawText(nome, {
             x: 230,
-            y: 100,
+            y: 85,
             size: 10,
             font: calibriRegular,
             color: rgb(0, 0, 0),
@@ -163,7 +166,7 @@ const Form = () => {
 
         SecondPage.drawText(cpf, {
             x: 230,
-            y: 80,
+            y: 65,
             size: 10,
             font: calibriRegular,
             color: rgb(0, 0, 0),
@@ -171,7 +174,7 @@ const Form = () => {
 
         SecondPage.drawText(local, {
             x: 210,
-            y: 168,
+            y: 153,
             size: 10,
             font: calibriRegular,
             color: rgb(0, 0, 0),
@@ -179,7 +182,7 @@ const Form = () => {
         
         SecondPage.drawText(parseDate(data), {
             x: 360,
-            y: 168,
+            y: 153,
             size: 10,
             font: calibriRegular,
             color: rgb(0, 0, 0),
@@ -187,7 +190,7 @@ const Form = () => {
 
         SecondPage.drawText(selectPerfil()[0]+":", {
             x: 47,
-            y: 360,
+            y: 350,
             size: 12,
             font: calibriBold,
             color: rgb(0, 0, 0),
@@ -195,7 +198,7 @@ const Form = () => {
 
         SecondPage.drawText(selectPerfil()[1], {
             x: 47,
-            y: 340,
+            y: 330,
             size: 10,
             font: assistantRegularFont,
             lineHeight: 11,
@@ -228,7 +231,7 @@ const Form = () => {
         var fileName = "teste.pdf";
         link.download = fileName;
         link.click();
-
+        setGerandoPdf(false);
     }
 
     const calcSum = () => {
@@ -330,7 +333,10 @@ const Form = () => {
                 {formValid === false ?
                     <p className={styled.perfil_alerta_preenchimento}>Selecione todas as opões e preencha todos os campos</p> :
                     <div className={styled.perfil_container_botao}>
-                        <button onClick={handlerPdfGen} type="submit" className="fusion-button button-flat button-small button-default button-1 fusion-button-default-span fusion-button-default-type">Gerar PDF</button>
+                       {gerandoPdf === false ? 
+                       <button onClick={handlerPdfGen} type="submit" className="fusion-button button-flat button-small button-default button-1 fusion-button-default-span fusion-button-default-type">Gerar PDF</button>
+                        : <p>Por favor, aguarde. Gerando pdf...</p>
+                       }
                     </div>
                 }
 
