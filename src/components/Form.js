@@ -271,7 +271,7 @@ const Form = () => {
                         </div>
                     </div>
                 </div>
-                <p>
+                <p className={styled.perfil_declaracao}>
                     Declaro que:
                 </p>
                 <p>
