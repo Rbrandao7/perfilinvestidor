@@ -1,0 +1,468 @@
+[
+    {
+        "title": "Qual a finalidade do Investimento e preferências quanto à assunção de riscos?",
+        "id": "question1",
+        "options": [
+            {
+                "title": "Preservar meu capital ao longo do tempo, com segurança mesmo abrindo mão de rentabilidade",
+                "weight": 0,
+                "id": "ans1opt1",
+                "name": "question1",
+                "positionX": 61,
+                "positionY": 562,
+                "page": 0
+            },
+            {
+                "title": "Aumentar meu capital, com rentabilidade e segurança",
+                "weight": 5,
+                "id": "ans1opt2",
+                "name": "question1",
+                "positionX": 61,
+                "positionY": 550,
+                "page": 0
+            },
+            {
+                "title": "Rentabilidade, independente do risco, aumentando, inclusive, o valor investido",
+                "weight": 10,
+                "id": "ans1opt3",
+                "name": "question1",
+                "positionX": 61,
+                "positionY": 535,
+                "page": 0
+            }
+        ]
+
+    },
+    {
+        "title": "Por quanto tempo a empresa pretende deixar seus recursos aplicados?",
+        "id": "question2",
+        "options": [
+            {
+                "title": "Menos de 1 ano",
+                "weight": 0,
+                "id": "ans2opt1",
+                "name": "question2",
+                "positionX": 61,
+                "positionY": 495,
+                "page": 0
+            },
+            {
+                "title": "Entre 1 ano e 3 anos",
+                "weight": 5,
+                "id": "ans2opt2",
+                "name": "question2",
+                "positionX": 61,
+                "positionY": 483,
+                "page": 0
+            },
+            {
+                "title": "Acima de 3 anos",
+                "weight": 10,
+                "id": "ans2opt3",
+                "name": "question2",
+                "positionX": 61,
+                "positionY": 469,
+                "page": 0
+            }
+        ]
+
+    },
+    {
+        "title": "Sobre quais investimentos abaixo os profissionais da empresa ligados as finanças possuem conhecimento?",
+        "id": "question3",
+        "options": [
+            {
+                "title": "Poupança, CDB, LCI, LCA ou Fundos DI",
+                "weight": 2,
+                "id": "ans3opt1",
+                "name": "question3",
+                "positionX": 61,
+                "positionY": 429,
+                "page": 0
+            },
+            {
+                "title": "Além dos anteriores, outros produtos de Renda Fixa (como investimentos atrelados à inflação e títulos prefixados) ou Fundos Multimercados",
+                "weight": 5,
+                "id": "ans3opt2",
+                "name": "question3",
+                "positionX": 61,
+                "positionY": 416,
+                "page": 0
+            },
+            {
+                "title": "Além dos anteriores, Ações, Fundos de Ações ou Fundos Estruturados ( FIP, FIDC, FII, etc.)",
+                "weight": 9,
+                "id": "ans3opt3",
+                "name": "question3",
+                "positionX": 61,
+                "positionY": 389,
+                "page": 0
+            },
+            {
+                "title": "Além de todos os anteriores, também conheçemos Derivativos",
+                "weight": 10,
+                "id": "ans3opt4",
+                "name": "question3",
+                "positionX": 61,
+                "positionY": 377,
+                "page": 0
+            },
+            {
+                "title": "Não conheçemos produtos de investimentos ",
+                "weight": 0,
+                "id": "ans3opt5",
+                "name": "question3",
+                "positionX": 61,
+                "positionY": 363,
+                "page": 0
+            }
+        ]
+
+    },
+    {
+        "title": "Nos últimos 12 meses qual a natureza das operações realizadas pela empresa no mercado de valores mobiliários?",
+        "id": "question4",
+        "options": [
+            {
+                "title": "Poupança, CDB, LCI, LCA ou Fundos DI",
+                "weight": 2,
+                "id": "ans4opt1",
+                "name": "question4",
+                "positionX": 61,
+                "positionY": 323,
+                "page": 0
+            },
+            {
+                "title": "Produtos de Renda Fixa (como investimentos atrelados à inflação e títulos prefixados) ou Fundos Multimercados",
+                "weight": 5,
+                "id": "ans4opt2",
+                "name": "question4",
+                "positionX": 61,
+                "positionY": 311,
+                "page": 0
+            },
+            {
+                "title": "Ações, Fundos de Ações ou Fundos Estruturados ( FIP, FIDC, FII, etc.)",
+                "weight": 9,
+                "id": "ans4opt3",
+                "name": "question4",
+                "positionX": 61,
+                "positionY": 299,
+                "page": 0
+            },
+            {
+                "title": "Derivativos",
+                "weight": 10,
+                "id": "ans4opt4",
+                "name": "question4",
+                "positionX": 61,
+                "positionY": 285,
+                "page": 0
+            },
+            {
+                "title": "Não investimos nos últimos 12 meses",
+                "weight": 0,
+                "id": "ans4opt5",
+                "name": "question4",
+                "positionX": 61,
+                "positionY": 272,
+                "page": 0
+            }
+        ]
+
+    },
+    {
+        "title": "Com qual frequência a empresa investiu nos últimos 12 meses?",
+        "id": "question5",
+        "options": [
+            {
+                "title": "No mínimo, 12 vezes",
+                "weight": 10,
+                "id": "ans5opt1",
+                "name": "question5",
+                "positionX": 61,
+                "positionY": 232,
+                "page": 0
+            },
+            {
+                "title": "Aproximadamente 6 vezes",
+                "weight": 5,
+                "id": "ans5opt2",
+                "name": "question5",
+                "positionX": 61,
+                "positionY": 220,
+                "page": 0
+            },
+            {
+                "title": "Aproximadamente 4 vezes",
+                "weight": 3,
+                "id": "ans5opt3",
+                "name": "question5",
+                "positionX": 61,
+                "positionY": 207,
+                "page": 0
+            },
+            {
+                "title": "Aproximadamente 2 vezes",
+                "weight": 1,
+                "id": "ans5opt4",
+                "name": "question5",
+                "positionX": 61,
+                "positionY": 193,
+                "page": 0
+            },
+            {
+                "title": "Não investimos nos últimos 12 meses",
+                "weight": 0,
+                "id": "ans5opt5",
+                "name": "question5",
+                "positionX": 61,
+                "positionY": 180,
+                "page": 0
+            }
+        ]
+
+    },
+    {
+        "title": "Qual das alternativas melhor classifica a formação acadêmica e experiência com o Mercado Financeiro do profissional responsável pelas finanças da Empresa?",
+        "id": "question6",
+        "options": [
+            {
+                "title": "Não possui formação acadêmica ou conhecimento do Mercado Financeiro",
+                "weight": 1,
+                "id": "ans6opt1",
+                "name": "question6",
+                "positionX": 61,
+                "positionY": 140,
+                "page": 0
+            },
+            {
+                "title": "Possui formação acadêmica em outra área, mas não tem experiência com o Mercado Financeiro",
+                "weight": 2,
+                "id": "ans6opt2",
+                "name": "question6",
+                "positionX": 61,
+                "positionY": 128,
+                "page": 0
+            },
+            {
+                "title": "Possui formação acadêmica em outra área, mas possui conhecimento sobre o Mercado financeiro",
+                "weight": 4,
+                "id": "ans6opt3",
+                "name": "question6",
+                "positionX": 61,
+                "positionY": 115,
+                "page": 0
+            },
+            {
+                "title": "Possui formação acadêmica na área financeira ou pleno conhecimento sobre o Mercado Financeiro",
+                "weight": 5,
+                "id": "ans6opt4",
+                "name": "question6",
+                "positionX": 61,
+                "positionY": 102,
+                "page": 0
+            }
+        ]
+
+    },
+    {
+        "title": "Qual o faturamento anual da empresa?",
+        "id": "question7",
+        "options": [
+            {
+                "title": "Até R$ 81 mil",
+                "weight": 0,
+                "id": "ans7opt1",
+                "name": "question7",
+                "positionX": 61,
+                "positionY": 734,
+                "page": 1
+            },
+            {
+                "title": "Entre 81 mil e  R$ 360 mil",
+                "weight": 1,
+                "id": "ans7opt2",
+                "name": "question7",
+                "positionX": 61,
+                "positionY": 721,
+                "page": 1
+            },
+            {
+                "title": "Entre 360 mil e R$ 4,8 milhões",
+                "weight": 2,
+                "id": "ans7opt3",
+                "name": "question7",
+                "positionX": 61,
+                "positionY": 708,
+                "page": 1
+            },
+            {
+                "title": "Acima de R$ 4,8 milhões",
+                "weight": 4,
+                "id": "ans7opt4",
+                "name": "question7",
+                "positionX": 61,
+                "positionY": 694,
+                "page": 1
+            }
+        ]
+
+    },
+    {
+        "title": "Qual o valor estimado do patrimônio total da sua empresa?",
+        "id": "question8",
+        "options": [
+            {
+                "title": "Até R$ 2,5 milhões",
+                "weight": 0,
+                "id": "ans8opt1",
+                "name": "question8",
+                "positionX": 61,
+                "positionY": 654,
+                "page": 1
+            },
+            {
+                "title": "Entre R$ 2,5 milhões e  R$ 5 milhões",
+                "weight": 1,
+                "id": "ans8opt2",
+                "name": "question8",
+                "positionX": 61,
+                "positionY": 642,
+                "page": 1
+            },
+            {
+                "title": "Entre  R$ 5 milhões e R$ 20 milhões",
+                "weight": 2,
+                "id": "ans8opt3",
+                "name": "question8",
+                "positionX": 61,
+                "positionY": 629,
+                "page": 1
+            },
+            {
+                "title": "Entre R$ 20 milhões e R$ 50 milhões",
+                "weight": 4,
+                "id": "ans8opt4",
+                "name": "question8",
+                "positionX": 61,
+                "positionY": 616,
+                "page": 1
+            },
+            {
+                "title": "Acima de R$ 50 milhões",
+                "weight": 5,
+                "id": "ans8opt5",
+                "name": "question8",
+                "positionX": 61,
+                "positionY": 603,
+                "page": 1
+            }
+        ]
+
+    },
+    {
+        "title": "Considerando suas necessidades futuras de recursos, qual a expectativa da empresa em relação aos investimentos?",
+        "id": "question9",
+        "options": [
+            {
+                "title": "Não planejamos nesse momento resgatar os investimentos e nem realizaremos novas aplicações",
+                "weight": 2,
+                "id": "ans9opt1",
+                "name": "question9",
+                "positionX": 61,
+                "positionY": 563,
+                "page": 1
+            },
+            {
+                "title": "Não planejamos nesse momento regatar os investimentos e pretendemos realizar novas aplicações",
+                "weight": 3,
+                "id": "ans9opt2",
+                "name": "question9",
+                "positionX": 61,
+                "positionY": 551,
+                "page": 1
+            },
+            {
+                "title": "Podemos necessitar de parte dos investimentos para pagar despesas no curto prazo",
+                "weight": 1,
+                "id": "ans9opt3",
+                "name": "question9",
+                "positionX": 61,
+                "positionY": 538,
+                "page": 1
+            },
+            {
+                "title": "Contamos com esses investimentos para complementar as fontes de receita da empresa",
+                "weight": 0,
+                "id": "ans9opt4",
+                "name": "question9",
+                "positionX": 61,
+                "positionY": 525,
+                "page": 1
+            },
+            {
+                "title": "Não possuímos necessidades futuras de recursos, com relação aos investimentos",
+                "weight": 5,
+                "id": "ans9opt5",
+                "name": "question9",
+                "positionX": 61,
+                "positionY": 512,
+                "page": 1
+            }
+        ]
+
+    },
+    {
+        "title": "Do pratimônio total da empresa, qual o volume em (%) investido nos últimos 12 meses?",
+        "id": "question10",
+        "options": [
+            {
+                "title": "Investimos menos de 10%",
+                "weight": 1,
+                "id": "ans10opt1",
+                "name": "question10",
+                "positionX": 61,
+                "positionY": 458,
+                "page": 1
+            },
+            {
+                "title": "Investimos entre 10,01% a 25% ",
+                "weight": 2,
+                "id": "ans10opt2",
+                "name": "question10",
+                "positionX": 61,
+                "positionY": 446,
+                "page": 1
+            },
+            {
+                "title": "Investimos entre 25,01% a 70%",
+                "weight": 3,
+                "id": "ans10opt3",
+                "name": "question10",
+                "positionX": 61,
+                "positionY": 433,
+                "page": 1
+            },
+            {
+                "title": "Investimos acima de 70%",
+                "weight": 5,
+                "id": "ans10opt4",
+                "name": "question10",
+                "positionX": 61,
+                "positionY": 420,
+                "page": 1
+            },
+            {
+                "title": "Não  Investimos nos  últimos 12 meses",
+                "weight": 0,
+                "id": "ans10opt5",
+                "name": "question10",
+                "positionX": 61,
+                "positionY": 407,
+                "page": 1
+            }
+        ]
+
+    }
+]

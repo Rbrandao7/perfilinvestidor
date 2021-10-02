@@ -1,8 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Form from './components/Form';
+import styled from './App.module.css';
+import questionsPf from './questionsPf.json';
+import questionsPj from './questionsPj.json';
+import templatePf from './template-pf.pdf';
+import templatePj from './template-pj.pdf';
 
 
 function App() {
+
+  const [perfilSelecionado, setPerfilSelecionado] = useState('');
+
+  const handlerSelecaoPerfil = (evt) => {
+
+    setPerfilSelecionado(evt.target.getAttribute('perfil'));
+
+  };
 
 
   return (
@@ -20,9 +33,15 @@ function App() {
         que mais se aproxima dos seus objetivos e expectativas de investimento.
       </p>
 
-      <Form />
-   
-
+      {
+        perfilSelecionado === '' ?
+          <div className={styled.perfil_container_selecao_pessoa}>
+            <button type="button" onClick={handlerSelecaoPerfil} perfil="pf" className="fusion-button button-flat button-small button-default button-1 fusion-button-default-span fusion-button-default-type">Pessoa Física</button>
+            <button type="button" onClick={handlerSelecaoPerfil} perfil="pj" className="fusion-button button-flat button-small button-default button-1 fusion-button-default-span fusion-button-default-type">Pessoa Jurídica</button>
+          </div>
+          :
+          perfilSelecionado === 'pf' ? <Form questions={questionsPf} perfil="pf" template={templatePf}/> : <Form questions={questionsPj} pefil="pj" template={templatePj}/>
+      }
 
     </div>
 

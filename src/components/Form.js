@@ -4,23 +4,24 @@ import Card from '../components/Card';
 import Check from '../components/Check';
 import { degrees, PDFDocument, rgb, StandardFonts } from 'pdf-lib';
 import fontkit from '@pdf-lib/fontkit'
-import PDFPF from '../template-pf.pdf';
 import fontCalibri from '../calibri.ttf';
 import fontCalibriBold from '../calibri-bold.ttf';
 import assistantRegular from '../assistant.ttf';
-import questions from '../questions.json';
 import perfis from '../perfis.json';
 import cpfFormat from '../lib/formatCpf';
 import formatCnpj from '../lib/formatCnpj';
 import testCpf from '../lib/testCpf';
+import testCnpj from '../lib/testCnpj';
 import styled from './Form.module.css';
 import parseDate from '../lib/parseDate';
 
-const Form = () => {
+const Form = (props) => {
 
     const [soma, setSoma] = useState();
     const [cpf, setCpf] = useState('');
     const [cpfValid, setCpfValid] = useState(false);
+    const [cnpj, setCnpj] = useState('');
+    const [cnpjValid, setCnpjValid] = useState(false);
     const [nome, setNome] = useState('');
     const [formValid, setFormValid] = useState(false);
     const [data, setData] = useState('');
@@ -82,7 +83,8 @@ const Form = () => {
     useEffect(() => {
         setFormValid(checkFormValid());
         setSoma(calcSum());
-        setCpfValid(testCpf(cpf))
+        setCpfValid(testCpf(cpf));
+        setCnpjValid(testCnpj(cnpj));
 
     }, [cpf, nome, soma, { ...answers }, local, data])
 
@@ -106,12 +108,11 @@ const Form = () => {
         setData(evt.target.value);
     }
 
-    const handlerInputCpf = (evt) => {
-        setLocal(evt.target.value);
-    }
-
     const handlerCnpjChange = (event) => {
-        //      setCnpj(formatCnpj(event.target.value));
+        
+        if (event.target.value.length > 18) return '';
+
+        setCnpj(formatCnpj(event.target.value));
     }
 
     const handleCpfChange = (event) => {
@@ -130,13 +131,14 @@ const Form = () => {
     }
 
     const checkFormValid = () => {
-        return Object.values(answers).every((answer) => answer.selected) && nome !== "" && cpf !== "" && local !== "" && data !== "" && cpfValid === true;
+        
+        return Object.values(answers).every((answer) => answer.selected) && nome !== "" && (cpf !== "" || cnpj !== "") && local !== "" && data !== "" && (cpfValid === true || cnpjValid === true);
     }
 
     const handlerPdfGen = async () => {
 
         setGerandoPdf(true);
-        const url = PDFPF;
+        const url = props.template;
         const existingPdfBytes = await fetch(url).then(res => res.arrayBuffer());
 
         const pdfDoc = await PDFDocument.load(existingPdfBytes)
@@ -179,7 +181,7 @@ const Form = () => {
             font: calibriRegular,
             color: rgb(0, 0, 0),
         });
-        
+
         SecondPage.drawText(parseDate(data), {
             x: 360,
             y: 153,
@@ -188,7 +190,7 @@ const Form = () => {
             color: rgb(0, 0, 0),
         });
 
-        SecondPage.drawText(selectPerfil()[0]+":", {
+        SecondPage.drawText(selectPerfil()[0] + ":", {
             x: 47,
             y: 350,
             size: 12,
@@ -207,9 +209,9 @@ const Form = () => {
 
         //  Marca as respostas
         Object.entries(answers).forEach(([chave, valor], index) => {
-            let postionX = questions[index]["options"].find(item => item.id == Object.values(answers)[index]["optionId"]).positionX;
-            let postionY = questions[index]["options"].find(item => item.id == Object.values(answers)[index]["optionId"]).positionY;
-            let page = questions[index]["options"].find(item => item.id == Object.values(answers)[index]["optionId"]).page;
+            let postionX = props.questions[index]["options"].find(item => item.id == Object.values(answers)[index]["optionId"]).positionX;
+            let postionY = props.questions[index]["options"].find(item => item.id == Object.values(answers)[index]["optionId"]).positionY;
+            let page = props.questions[index]["options"].find(item => item.id == Object.values(answers)[index]["optionId"]).page;
 
             pages[page].drawRectangle({
                 x: postionX,
@@ -255,7 +257,7 @@ const Form = () => {
         <>
             <form>
                 {
-                    questions.map((question, index) => <Question key={question.id} index={index} question={question} onSelect={handlerQuestionSelection} sum={calcSum} answers={answers} />)
+                    props.questions.map((question, index) => <Question key={question.id} index={index} question={question} onSelect={handlerQuestionSelection} sum={calcSum} answers={answers} />)
                 }
             </form>
             <Card>
@@ -318,25 +320,41 @@ const Form = () => {
                         </div>
                     </div>
                     <div className="col-12 col-sm-6">
-                        <div className="mb-3">
-                            <label htmlFor="cpf" className="form-label">
-                                CPF
-                                <span className="text-danger">*</span>
-                                
-                            </label>
-                            <input type="tel" className="form-control" id="cpf" onChange={handleCpfChange} value={cpf} />
-                            {cpfValid === true ? '' : <span className={styled.perfil_erro_cpf}>Digite um cpf válido</span>}
-                        </div>
+                        {props.perfil === 'pf' ?
+                            <div className="mb-3">
+                                <label htmlFor="cpf" className="form-label">
+                                    CPF
+                                    <span className="text-danger">*</span>
+
+                                </label>
+                                <input type="tel" className="form-control" id="cpf" onChange={handleCpfChange} value={cpf} />
+                                {cpfValid === true ? '' : <span className={styled.perfil_erro}>Digite um cpf válido</span>}
+                            </div>
+                            :
+                            <div className="mb-3">
+                                <label htmlFor="cnpj" className="form-label">
+                                    CNPJ
+                                    <span className="text-danger">*</span>
+
+                                </label>
+                                <input type="tel" className="form-control" id="cnpj" onChange={handlerCnpjChange} value={cnpj} />
+                                {cnpjValid === true ? '' : <span className={styled.perfil_erro}>Digite um cnpj válido</span>}
+                            </div>
+
+                        }
+
                     </div>
                 </div>
 
-                {formValid === false ?
-                    <p className={styled.perfil_alerta_preenchimento}>Selecione todas as opões e preencha todos os campos</p> :
+                {formValid === false
+                    ?
+                    <p className={styled.perfil_alerta_preenchimento}>Selecione todas as opões e preencha todos os campos</p>
+                    :
                     <div className={styled.perfil_container_botao}>
-                       {gerandoPdf === false ? 
-                       <button onClick={handlerPdfGen} type="submit" className="fusion-button button-flat button-small button-default button-1 fusion-button-default-span fusion-button-default-type">Gerar PDF</button>
-                        : <p>Por favor, aguarde. Gerando pdf...</p>
-                       }
+                        {gerandoPdf === false ?
+                            <button onClick={handlerPdfGen} type="submit" className="fusion-button button-flat button-small button-default button-1 fusion-button-default-span fusion-button-default-type">Gerar PDF</button>
+                            : <p>Por favor, aguarde. Gerando pdf...</p>
+                        }
                     </div>
                 }
 
