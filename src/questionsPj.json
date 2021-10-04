@@ -233,7 +233,7 @@
                 "id": "ans6opt1",
                 "name": "question6",
                 "positionX": 61,
-                "positionY": 140,
+                "positionY": 128,
                 "page": 0
             },
             {
@@ -242,7 +242,7 @@
                 "id": "ans6opt2",
                 "name": "question6",
                 "positionX": 61,
-                "positionY": 128,
+                "positionY": 116,
                 "page": 0
             },
             {
@@ -251,7 +251,7 @@
                 "id": "ans6opt3",
                 "name": "question6",
                 "positionX": 61,
-                "positionY": 115,
+                "positionY": 103,
                 "page": 0
             },
             {
@@ -260,7 +260,7 @@
                 "id": "ans6opt4",
                 "name": "question6",
                 "positionX": 61,
-                "positionY": 102,
+                "positionY": 89,
                 "page": 0
             }
         ]
@@ -276,7 +276,7 @@
                 "id": "ans7opt1",
                 "name": "question7",
                 "positionX": 61,
-                "positionY": 734,
+                "positionY": 721,
                 "page": 1
             },
             {
@@ -285,7 +285,7 @@
                 "id": "ans7opt2",
                 "name": "question7",
                 "positionX": 61,
-                "positionY": 721,
+                "positionY": 709,
                 "page": 1
             },
             {
@@ -294,7 +294,7 @@
                 "id": "ans7opt3",
                 "name": "question7",
                 "positionX": 61,
-                "positionY": 708,
+                "positionY": 694,
                 "page": 1
             },
             {
@@ -303,7 +303,7 @@
                 "id": "ans7opt4",
                 "name": "question7",
                 "positionX": 61,
-                "positionY": 694,
+                "positionY": 682,
                 "page": 1
             }
         ]
@@ -319,7 +319,7 @@
                 "id": "ans8opt1",
                 "name": "question8",
                 "positionX": 61,
-                "positionY": 654,
+                "positionY": 642,
                 "page": 1
             },
             {
@@ -328,7 +328,7 @@
                 "id": "ans8opt2",
                 "name": "question8",
                 "positionX": 61,
-                "positionY": 642,
+                "positionY": 629,
                 "page": 1
             },
             {
@@ -337,7 +337,7 @@
                 "id": "ans8opt3",
                 "name": "question8",
                 "positionX": 61,
-                "positionY": 629,
+                "positionY": 616,
                 "page": 1
             },
             {
@@ -346,7 +346,7 @@
                 "id": "ans8opt4",
                 "name": "question8",
                 "positionX": 61,
-                "positionY": 616,
+                "positionY": 603,
                 "page": 1
             },
             {
@@ -355,7 +355,7 @@
                 "id": "ans8opt5",
                 "name": "question8",
                 "positionX": 61,
-                "positionY": 603,
+                "positionY": 590,
                 "page": 1
             }
         ]
@@ -371,7 +371,7 @@
                 "id": "ans9opt1",
                 "name": "question9",
                 "positionX": 61,
-                "positionY": 563,
+                "positionY": 551,
                 "page": 1
             },
             {
@@ -380,7 +380,7 @@
                 "id": "ans9opt2",
                 "name": "question9",
                 "positionX": 61,
-                "positionY": 551,
+                "positionY": 538,
                 "page": 1
             },
             {
@@ -389,7 +389,7 @@
                 "id": "ans9opt3",
                 "name": "question9",
                 "positionX": 61,
-                "positionY": 538,
+                "positionY": 525,
                 "page": 1
             },
             {
@@ -398,7 +398,7 @@
                 "id": "ans9opt4",
                 "name": "question9",
                 "positionX": 61,
-                "positionY": 525,
+                "positionY": 512,
                 "page": 1
             },
             {
@@ -407,7 +407,7 @@
                 "id": "ans9opt5",
                 "name": "question9",
                 "positionX": 61,
-                "positionY": 512,
+                "positionY": 498,
                 "page": 1
             }
         ]
@@ -423,7 +423,7 @@
                 "id": "ans10opt1",
                 "name": "question10",
                 "positionX": 61,
-                "positionY": 458,
+                "positionY": 446,
                 "page": 1
             },
             {
@@ -432,7 +432,7 @@
                 "id": "ans10opt2",
                 "name": "question10",
                 "positionX": 61,
-                "positionY": 446,
+                "positionY": 433,
                 "page": 1
             },
             {
@@ -441,7 +441,7 @@
                 "id": "ans10opt3",
                 "name": "question10",
                 "positionX": 61,
-                "positionY": 433,
+                "positionY": 420,
                 "page": 1
             },
             {
@@ -450,7 +450,7 @@
                 "id": "ans10opt4",
                 "name": "question10",
                 "positionX": 61,
-                "positionY": 420,
+                "positionY": 407,
                 "page": 1
             },
             {
@@ -459,7 +459,7 @@
                 "id": "ans10opt5",
                 "name": "question10",
                 "positionX": 61,
-                "positionY": 407,
+                "positionY": 394,
                 "page": 1
             }
         ]

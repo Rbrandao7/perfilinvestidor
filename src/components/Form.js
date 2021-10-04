@@ -109,7 +109,7 @@ const Form = (props) => {
     }
 
     const handlerCnpjChange = (event) => {
-        
+
         if (event.target.value.length > 18) return '';
 
         setCnpj(formatCnpj(event.target.value));
@@ -131,7 +131,7 @@ const Form = (props) => {
     }
 
     const checkFormValid = () => {
-        
+
         return Object.values(answers).every((answer) => answer.selected) && nome !== "" && (cpf !== "" || cnpj !== "") && local !== "" && data !== "" && (cpfValid === true || cnpjValid === true);
     }
 
@@ -157,55 +157,112 @@ const Form = (props) => {
         const pages = pdfDoc.getPages()
         const firstPage = pages[0];
         const SecondPage = pages[1];
-        const { width, height } = firstPage.getSize()
-        SecondPage.drawText(nome, {
-            x: 230,
-            y: 85,
-            size: 10,
-            font: calibriRegular,
-            color: rgb(0, 0, 0),
-        });
+        const { width, height } = firstPage.getSize();
 
-        SecondPage.drawText(cpf, {
-            x: 230,
-            y: 65,
-            size: 10,
-            font: calibriRegular,
-            color: rgb(0, 0, 0),
-        });
+        if (props.perfil === 'pf') {
 
-        SecondPage.drawText(local, {
-            x: 210,
-            y: 153,
-            size: 10,
-            font: calibriRegular,
-            color: rgb(0, 0, 0),
-        });
+            SecondPage.drawText(cpf, {
+                x: 230,
+                y: 65,
+                size: 10,
+                font: calibriRegular,
+                color: rgb(0, 0, 0),
+            });
 
-        SecondPage.drawText(parseDate(data), {
-            x: 360,
-            y: 153,
-            size: 10,
-            font: calibriRegular,
-            color: rgb(0, 0, 0),
-        });
+            SecondPage.drawText(nome, {
+                x: 230,
+                y: 85,
+                size: 10,
+                font: calibriRegular,
+                color: rgb(0, 0, 0),
+            });
 
-        SecondPage.drawText(selectPerfil()[0] + ":", {
-            x: 47,
-            y: 350,
-            size: 12,
-            font: calibriBold,
-            color: rgb(0, 0, 0),
-        });
+            SecondPage.drawText(local, {
+                x: 210,
+                y: 153,
+                size: 10,
+                font: calibriRegular,
+                color: rgb(0, 0, 0),
+            });
+    
+            SecondPage.drawText(parseDate(data), {
+                x: 360,
+                y: 153,
+                size: 10,
+                font: calibriRegular,
+                color: rgb(0, 0, 0),
+            });
 
-        SecondPage.drawText(selectPerfil()[1], {
-            x: 47,
-            y: 330,
-            size: 10,
-            font: assistantRegularFont,
-            lineHeight: 11,
-            color: rgb(0, 0, 0),
-        });
+            SecondPage.drawText(selectPerfil()[0] + ":", {
+                x: 47,
+                y: 350,
+                size: 12,
+                font: calibriBold,
+                color: rgb(0, 0, 0),
+            });
+    
+            SecondPage.drawText(selectPerfil()[1], {
+                x: 47,
+                y: 330,
+                size: 10,
+                font: assistantRegularFont,
+                lineHeight: 11,
+                color: rgb(0, 0, 0),
+            });
+        }else{
+
+            SecondPage.drawText(selectPerfil()[0] + ":", {
+                x: 47,
+                y: 345,
+                size: 12,
+                font: calibriBold,
+                color: rgb(0, 0, 0),
+            });
+    
+            SecondPage.drawText(selectPerfil()[1], {
+                x: 47,
+                y: 325,
+                size: 10,
+                font: assistantRegularFont,
+                lineHeight: 11,
+                color: rgb(0, 0, 0),
+            });
+
+            SecondPage.drawText(local, {
+                x: 210,
+                y: 149,
+                size: 10,
+                font: calibriRegular,
+                color: rgb(0, 0, 0),
+            });
+    
+            SecondPage.drawText(parseDate(data), {
+                x: 360,
+                y: 149,
+                size: 10,
+                font: calibriRegular,
+                color: rgb(0, 0, 0),
+            });
+
+            // Razão social utiliza o mesmo campo de nome.
+            SecondPage.drawText(nome, {
+                x: 258,
+                y: 89,
+                size: 10,
+                font: calibriRegular,
+                color: rgb(0, 0, 0),
+            });
+
+            SecondPage.drawText(cnpj, {
+                x: 258,
+                y: 69,
+                size: 10,
+                font: calibriRegular,
+                color: rgb(0, 0, 0),
+            });
+
+        }
+
 
         //  Marca as respostas
         Object.entries(answers).forEach(([chave, valor], index) => {
@@ -311,10 +368,8 @@ const Form = (props) => {
                     <div className="col-12 col-sm-6">
                         <div className="mb-3">
                             <label htmlFor="nome" className="form-label">
-                                Nome
+                                {props.perfil === 'pf' ? 'Nome' : 'Razão Social'}
                                 <span className="text-danger">*</span>
-
-
                             </label>
                             <input type="text" className="form-control" id="nome" onChange={handlerInputNome} value={nome} />
                         </div>
